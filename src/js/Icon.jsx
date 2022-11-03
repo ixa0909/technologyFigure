@@ -1,12 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Button from "@mui/material/Button";
 
 export default function Icon(props) {
   const show = () => {
     props.setIconStatus(1);
-  };
-  const unshown = () => {
-    props.
-    props.setIconStatus(0);
   };
 
   return (
