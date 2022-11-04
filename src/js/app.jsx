@@ -9,8 +9,12 @@ import ButtonIcon from "./ButtonIcon";
 function App() {
   const [goStatus, setGoStatus] = useState(true);
   const [reactStatus, setReactStatus] = useState(true);
+  const [htmlStatus, setHtmlStatus] = useState(true);
+  const [cssStatus, setCssStatus] = useState(true);
+  const [vueStatus, setVueStatus] = useState(true);
   const [frontStatus, setFrontStatus] = useState(true);
   const [backStatus, setBackStatus] = useState(true);
+
   const [icons, setIcon] = useState([]);
 
   useEffect(() => {
@@ -36,9 +40,19 @@ function App() {
           status: reactStatus,
           text: "react",
         },
+        {
+          setStatus: setCssStatus,
+          status: cssStatus,
+          text: "css3",
+        },
+        {
+          setStatus: setVueStatus,
+          status: vueStatus,
+          text: "vuejs",
+        },
       ]);
     })();
-  }, [backStatus, frontStatus, goStatus, reactStatus]);
+  }, [backStatus, frontStatus, reactStatus, cssStatus, goStatus, vueStatus]);
 
   return (
     <div>
