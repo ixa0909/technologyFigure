@@ -1,0 +1,35 @@
+img {
+  width: 20%;
+  height: auto;
+}
+.btn {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 100px;
+}
+.framework {
+  text-align: center;
+}
+.icon {
+  text-align: center;
+  padding: 5px 5px 1px 5px;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  border: 1px solid #333333;
+  /* margin: 0 10% 0 10%; */
+  border-radius: 5px;
+}
+
+
+.name {
+  /* 枠組みがないので調節する必要がある */
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20.9% 0 20.9%;
+  vertical-align: bottom;
+}
+h6 {
+  margin:0;
+  padding:0;
+}
