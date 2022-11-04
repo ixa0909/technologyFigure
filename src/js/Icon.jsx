@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
-import Button from "@mui/material/Button";
+import React from "react";
+import style from "./styles/Icon.module.css";
 
-export default function Icon(props) {
-  const show = () => {
-    props.setIconStatus(1);
-  };
-
+function Icon(props){
+  const item = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/"+props.lang+"/"+props.lang+"-original.svg";
   return (
-    <div className="filter">
-      <Button variant="contained" color="secondary" onClick={show}>
-        React
-      </Button>
-    </div>
+    
+      <span className={props.langStatus ? style.visible:style.hidden} >
+        <img src={item}></img>
+      </span>
+    
   );
-}
+};
+
+export default Icon;
