@@ -3,15 +3,18 @@ import ReactDOM from "react-dom";
 import Button from "@mui/material/Button";
 import "./app.css";
 
+
+import Backend from "./Backend";
+import ButtonBack from "./ButtonBack";
+
 function App() {
   const [goStatus, setGoStatus] = useState(true);
-  const [reactStatus, setReactStatus] = useState(true);
-  const [frontStatus, setFrontStatus] = useState(false);
-  const [backStatus, setBackStatus] = useState(false);
 
-  const backShow = () => {
-    setBackStatus((BackStatus) => !BackStatus);
-  };
+  const [reactStatus, setReactStatus] = useState(true);
+  const [frontStatus, setFrontStatus] = useState(true);
+  const [backStatus, setBackStatus] = useState(true);
+
+  
   const frontShow = () => {
     setFrontStatus((FrontStatus) => !FrontStatus);
   };
@@ -23,28 +26,20 @@ function App() {
     setReactStatus((reactStatus) => !reactStatus);
   };
 
-  var go = null;
+  
   var react = null;
   var front = { display: "none" };
-  var back = { display: "none" };
-  if (backStatus === true) {
-    back = { display: "inline-block" };
-    ("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg");
-  } else {
-    back = { display: "none" };
-  }
+  
+
+  
+
   if (frontStatus === true) {
     front = { display: "inline-block" };
     ("https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg");
   } else {
     front = { display: "none" };
   }
-  if (goStatus === true) {
-    go =
-      "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg";
-  } else {
-    go = null;
-  }
+  
   if (reactStatus === true) {
     react =
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original-wordmark.svg";
@@ -54,9 +49,7 @@ function App() {
   return (
     <div>
       <div className="btn">
-        <Button variant="contained" color="secondary" onClick={backShow}>
-          Back
-        </Button>
+        <ButtonBack setBackStatus={setBackStatus}/>
         <Button variant="contained" color="secondary" onClick={frontShow}>
           Front
         </Button>
@@ -69,9 +62,7 @@ function App() {
       </div>
       <div className="framework">
         <span className="icon">
-          <span className="back" style={back}>
-            <img src={go}></img>
-          </span>
+          <Backend backStatus={backStatus} goStatus={goStatus}/>
           <span className="front" style={front}>
             <img src={react}></img>
           </span>

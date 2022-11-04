@@ -1,0 +1,10 @@
+.visible {
+  display: inline-block;
+  border: 1px solid #333333;
+  /* margin: 0 10% 0 10%; */
+  border-radius: 5px;
+  
+}
+.hidden {
+  display: none;
+}
