@@ -2,6 +2,7 @@ import React from "react";
 import Button from "@mui/material/Button";
 
 export default function ButtonIcon (props){
+  
   const show= () =>{
     if (props.status){
       props.setStatus(false);
@@ -10,6 +11,7 @@ export default function ButtonIcon (props){
     }
   };
   return (
+    
     <Button variant="contained" color="secondary" onClick={show}>
       {props.text}
     </Button>

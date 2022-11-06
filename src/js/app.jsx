@@ -12,6 +12,7 @@ function App() {
   const [htmlStatus, setHtmlStatus] = useState(true);
   const [cssStatus, setCssStatus] = useState(true);
   const [vueStatus, setVueStatus] = useState(true);
+
   const [frontStatus, setFrontStatus] = useState(true);
   const [backStatus, setBackStatus] = useState(true);
 
@@ -40,6 +41,11 @@ function App() {
           status: vueStatus,
           text: "vuejs",
         },
+        {
+          setStatus: setHtmlStatus,
+          status: htmlStatus,
+          text: "html5",
+        },
       ]);
     })();
   }, [backStatus, frontStatus, reactStatus, cssStatus, goStatus, vueStatus]);
@@ -47,19 +53,31 @@ function App() {
   return (
     <div>
       <div className="btn">
+        <ButtonIcon
+          setStatus={setBackStatus}
+          status={backStatus}
+          text={"backend"}
+        />
+        <ButtonIcon
+          setStatus={setFrontStatus}
+          status={frontStatus}
+          text={"frontend"}
+        />
         {icons.map((icon) => {
           return (
-            <ButtonIcon
-              setStatus={icon.setStatus}
-              status={icon.status}
-              text={icon.text}
-            />
+            
+              <ButtonIcon
+                setStatus={icon.setStatus}
+                status={icon.status}
+                text={icon.text}
+              />
+            
           );
         })}
       </div>
       <div className="framework">
         <span className="icon">
-          <Backend backStatus={backStatus} goStatus={goStatus} />
+          <Backend backStatus={backStatus} icons={icons} />
           <Frontend frontStatus={frontStatus} icons={icons} />
 
           <br></br>

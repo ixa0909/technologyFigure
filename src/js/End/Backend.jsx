@@ -6,7 +6,9 @@ import Icon from "./Icon/Icon";
 const Backend = (props) => {
   return (
     <span className={props.backStatus ? style.visible : style.hidden}>
-      <Icon langStatus={props.goStatus} lang={"go"} />
+      {props.icons.map((icon) => {
+        return <Icon langStatus={icon.status} lang={icon.text} />;
+      })}
     </span>
   );
 };
