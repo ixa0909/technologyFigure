@@ -10,7 +10,7 @@ const BackendBtn = (props) => {
         status={props.backStatus}
         text={"backend"}
       />
-      {/* {props.iconsBack.map((iconBack) => {
+      {props.iconsBack.map((iconBack) => {
         return (
           <ButtonIcon
             setStatus={iconBack.setStatusBack}
@@ -18,7 +18,7 @@ const BackendBtn = (props) => {
             text={iconBack.text}
           />
         );
-      })} */}
+      })}
     </div>
   );
 };

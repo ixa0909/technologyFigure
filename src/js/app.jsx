@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import "./app.css";
 
-import Backend from "./BackendFigure";
-import Frontend from "./FrontendFigure";
-
+import Backend from "./Backend";
+import Frontend from "./Frontend";
 
 function App() {
   const [goStatusBack, setGoStatusBack] = useState(true);
@@ -19,7 +18,7 @@ function App() {
   const [cssStatusFront, setCssStatusFront] = useState(true);
   const [vueStatusFront, setVueStatusFront] = useState(true);
 
-  const [frontStatus, setFrontStatus] = useState(false);
+  const [frontStatus, setFrontStatus] = useState(true);
   const [backStatus, setBackStatus] = useState(true);
 
   const [iconsBack, setIconBack] = useState([]);
@@ -97,8 +96,22 @@ function App() {
 
   return (
     <div>
-      <Backend backStatus={backStatus} iconsBack={iconsBack} setBackStatus={setBackStatus} frontStatus={frontStatus} setFrontStatus={setFrontStatus}/>
-      {/* <Frontend frontStatus={frontStatus} iconsFront={iconsFront} setFrontStatus={setFrontStatus}backStatus={backStatus} setBackStatus={setBackStatus}/> */}
+      <Backend
+        backStatus={backStatus}
+        iconsBack={iconsBack}
+        iconsFront={iconsFront}
+        setBackStatus={setBackStatus}
+        frontStatus={frontStatus}
+        setFrontStatus={setFrontStatus}
+      />
+      <Frontend
+        frontStatus={frontStatus}
+        iconsBack={iconsBack}
+        iconsFront={iconsFront}
+        setFrontStatus={setFrontStatus}
+        backStatus={backStatus}
+        setBackStatus={setBackStatus}
+      />
     </div>
   );
 }
