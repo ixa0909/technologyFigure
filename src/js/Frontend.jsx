@@ -13,7 +13,7 @@ const Frontend = (props) => {
         frontStatus={props.frontStatus}
       />
 
-      <div className="tech-fig">
+      <div className="fig">
         <span className="icon">
           <BackendFigure
             backStatus={props.backStatus}

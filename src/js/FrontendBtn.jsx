@@ -3,7 +3,7 @@ import ButtonIcon from "./ButtonIcon";
 
 const FrontendBtn = (props) => {
   return (
-    <div className="btn-front">
+    <div className="btn">
       <ButtonIcon
         setStatus={props.setFrontStatus}
         status={props.frontStatus}

@@ -102,13 +102,13 @@ function App() {
   return (
     <Router>
       <h1>Header</h1>
-      <Link to="/">バックエンド</Link>
+      <Link to="/index.html">バックエンド</Link>
       <br/>
-      <Link to="/front">フロントエンド</Link>
+      <Link to="/index.html/front">フロントエンド</Link>
       <Routes>
         <Route
           exact
-          path="/"
+          path="/index.html"
           element={
             <Backend
               backStatus={backStatus}
@@ -121,7 +121,7 @@ function App() {
           }
         />
         <Route
-          path="/front"
+          path="index.html/front"
           element={
             <Frontend
               frontStatus={frontStatus}
