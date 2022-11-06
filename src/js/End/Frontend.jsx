@@ -6,8 +6,8 @@ import Icon from "./Icon/Icon";
 const Frontend = (props) => {
   return (
     <span className={props.frontStatus ? style.visible : style.hidden}>
-      {props.icons.map((icon) => {
-        return <Icon langStatus={icon.status} lang={icon.text} />;
+      {props.iconsFront.map((iconFront) => {
+        return <Icon langStatus={iconFront.statusFront} lang={iconFront.text} />;
       })}
 
     </span>

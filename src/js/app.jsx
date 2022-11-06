@@ -7,69 +7,116 @@ import Frontend from "./End/Frontend";
 import ButtonIcon from "./ButtonIcon";
 
 function App() {
-  const [goStatus, setGoStatus] = useState(true);
-  const [reactStatus, setReactStatus] = useState(true);
-  const [htmlStatus, setHtmlStatus] = useState(true);
-  const [cssStatus, setCssStatus] = useState(true);
-  const [vueStatus, setVueStatus] = useState(true);
+  const [goStatusBack, setGoStatusBack] = useState(true);
+  const [reactStatusBack, setReactStatusBack] = useState(true);
+  const [htmlStatusBack, setHtmlStatusBack] = useState(true);
+  const [cssStatusBack, setCssStatusBack] = useState(true);
+  const [vueStatusBack, setVueStatusBack] = useState(true);
+
+  const [goStatusFront, setGoStatusFront] = useState(true);
+  const [reactStatusFront, setReactStatusFront] = useState(true);
+  const [htmlStatusFront, setHtmlStatusFront] = useState(true);
+  const [cssStatusFront, setCssStatusFront] = useState(true);
+  const [vueStatusFront, setVueStatusFront] = useState(true);
 
   const [frontStatus, setFrontStatus] = useState(true);
   const [backStatus, setBackStatus] = useState(true);
 
-  const [icons, setIcon] = useState([]);
+  const [iconsBack, setIconBack] = useState([]);
+  const [iconsFront, setIconFront] = useState([]);
 
   useEffect(() => {
     (async () => {
-      setIcon([
+      setIconBack([
         {
-          setStatus: setGoStatus,
-          status: goStatus,
+          setStatusBack: setGoStatusBack,
+          statusBack: goStatusBack,
           text: "go",
         },
         {
-          setStatus: setReactStatus,
-          status: reactStatus,
+          setStatusBack: setReactStatusBack,
+          statusBack: reactStatusBack,
           text: "react",
         },
         {
-          setStatus: setCssStatus,
-          status: cssStatus,
+          setStatusBack: setCssStatusBack,
+          statusBack: cssStatusBack,
           text: "css3",
         },
         {
-          setStatus: setVueStatus,
-          status: vueStatus,
+          setStatusBack: setVueStatusBack,
+          statusBack: vueStatusBack,
           text: "vuejs",
         },
         {
-          setStatus: setHtmlStatus,
-          status: htmlStatus,
+          setStatusBack: setHtmlStatusBack,
+          statusBack: htmlStatusBack,
+          text: "html5",
+        },
+      ]);
+      setIconFront([
+        {
+          setStatusFront: setGoStatusFront,
+          statusFront: goStatusFront,
+          text: "go",
+        },
+        {
+          setStatusFront: setReactStatusFront,
+          statusFront: reactStatusFront,
+          text: "react",
+        },
+        {
+          setStatusFront: setCssStatusFront,
+          statusFront: cssStatusFront,
+          text: "css3",
+        },
+        {
+          setStatusFront: setVueStatusFront,
+          statusFront: vueStatusFront,
+          text: "vuejs",
+        },
+        {
+          setStatusFront: setHtmlStatusFront,
+          statusFront: htmlStatusFront,
           text: "html5",
         },
       ]);
     })();
-  }, [backStatus, frontStatus, reactStatus, cssStatus, goStatus, vueStatus]);
+  }, [reactStatusBack, cssStatusBack, goStatusBack, vueStatusBack,htmlStatusBack,reactStatusFront, cssStatusFront, goStatusFront, vueStatusFront, htmlStatusFront]);
 
   return (
     <div>
-      <div className="btn">
+      <div className="btn-back">
         <ButtonIcon
           setStatus={setBackStatus}
           status={backStatus}
           text={"backend"}
         />
+        {iconsBack.map((iconBack) => {
+          return (
+            
+              <ButtonIcon
+                setStatus={iconBack.setStatusBack}
+                status={iconBack.statusBack}
+                text={iconBack.text}
+              />
+            
+          );
+        })}
+      </div>
+      <div className="btn-front">
         <ButtonIcon
           setStatus={setFrontStatus}
           status={frontStatus}
           text={"frontend"}
         />
-        {icons.map((icon) => {
+        {iconsFront.map((iconFront) => {
           return (
             
               <ButtonIcon
-                setStatus={icon.setStatus}
-                status={icon.status}
-                text={icon.text}
+                setStatus={iconFront.setStatusFront}
+                status={iconFront.statusFront}
+                text={iconFront.text}
               />
             
           );
@@ -77,8 +124,8 @@ function App() {
       </div>
       <div className="framework">
         <span className="icon">
-          <Backend backStatus={backStatus} icons={icons} />
-          <Frontend frontStatus={frontStatus} icons={icons} />
+          <Backend backStatus={backStatus} iconsBack={iconsBack} />
+          <Frontend frontStatus={frontStatus} iconsFront={iconsFront} />
 
           <br></br>
           <span className="name">
