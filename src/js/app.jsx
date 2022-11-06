@@ -4,8 +4,9 @@ import "./app.css";
 
 import Backend from "./End/BackendFigure";
 import Frontend from "./End/Frontend";
-import ButtonIcon from "./ButtonIcon";
+
 import BackendBtn from "./BackendBtn";
+import FrontendBtn from "./FrontendBtn";
 
 function App() {
   const [goStatusBack, setGoStatusBack] = useState(true);
@@ -88,24 +89,7 @@ function App() {
   return (
     <div>
       <BackendBtn iconsBack={iconsBack} setBackStatus={setBackStatus} backStatus={backStatus}/>
-      <div className="btn-front">
-        <ButtonIcon
-          setStatus={setFrontStatus}
-          status={frontStatus}
-          text={"frontend"}
-        />
-        {iconsFront.map((iconFront) => {
-          return (
-            
-              <ButtonIcon
-                setStatus={iconFront.setStatusFront}
-                status={iconFront.statusFront}
-                text={iconFront.text}
-              />
-            
-          );
-        })}
-      </div>
+      <FrontendBtn iconsFront={iconsFront} setFrontStatus={setFrontStatus} frontStatus={frontStatus}/>
       <div className="framework">
         <span className="icon">
           <Backend backStatus={backStatus} iconsBack={iconsBack} />
