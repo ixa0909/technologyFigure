@@ -84,12 +84,32 @@ function App() {
         },
       ]);
     })();
-  }, [reactStatusBack, cssStatusBack, goStatusBack, vueStatusBack,htmlStatusBack,reactStatusFront, cssStatusFront, goStatusFront, vueStatusFront, htmlStatusFront]);
+  }, [
+    reactStatusBack,
+    cssStatusBack,
+    goStatusBack,
+    vueStatusBack,
+    htmlStatusBack,
+    reactStatusFront,
+    cssStatusFront,
+    goStatusFront,
+    vueStatusFront,
+    htmlStatusFront,
+  ]);
 
   return (
     <div>
-      <BackendBtn iconsBack={iconsBack} setBackStatus={setBackStatus} backStatus={backStatus}/>
-      <FrontendBtn iconsFront={iconsFront} setFrontStatus={setFrontStatus} frontStatus={frontStatus}/>
+      <BackendBtn
+        iconsBack={iconsBack}
+        setBackStatus={setBackStatus}
+        backStatus={backStatus}
+      />
+      <FrontendBtn
+        iconsFront={iconsFront}
+        setFrontStatus={setFrontStatus}
+        frontStatus={frontStatus}
+      />
+
       <div className="framework">
         <span className="icon">
           <Backend backStatus={backStatus} iconsBack={iconsBack} />
