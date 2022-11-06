@@ -3,7 +3,7 @@ import style from "./End.module.css";
 
 import Icon from "./Icon/Icon";
 
-const Backend = (props) => {
+const BackendFigure = (props) => {
   return (
     <span className={props.backStatus ? style.visible : style.hidden}>
       {props.iconsBack.map((iconBack) => {
@@ -13,4 +13,4 @@ const Backend = (props) => {
   );
 };
 
-export default Backend;
+export default BackendFigure;

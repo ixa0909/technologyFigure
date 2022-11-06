@@ -2,11 +2,9 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import "./app.css";
 
-import Backend from "./End/BackendFigure";
-import Frontend from "./End/Frontend";
+import Backend from "./BackendFigure";
+import Frontend from "./FrontendFigure";
 
-import BackendBtn from "./BackendBtn";
-import FrontendBtn from "./FrontendBtn";
 
 function App() {
   const [goStatusBack, setGoStatusBack] = useState(true);
@@ -21,7 +19,7 @@ function App() {
   const [cssStatusFront, setCssStatusFront] = useState(true);
   const [vueStatusFront, setVueStatusFront] = useState(true);
 
-  const [frontStatus, setFrontStatus] = useState(true);
+  const [frontStatus, setFrontStatus] = useState(false);
   const [backStatus, setBackStatus] = useState(true);
 
   const [iconsBack, setIconBack] = useState([]);
@@ -99,29 +97,8 @@ function App() {
 
   return (
     <div>
-      <BackendBtn
-        iconsBack={iconsBack}
-        setBackStatus={setBackStatus}
-        backStatus={backStatus}
-      />
-      <FrontendBtn
-        iconsFront={iconsFront}
-        setFrontStatus={setFrontStatus}
-        frontStatus={frontStatus}
-      />
-
-      <div className="framework">
-        <span className="icon">
-          <Backend backStatus={backStatus} iconsBack={iconsBack} />
-          <Frontend frontStatus={frontStatus} iconsFront={iconsFront} />
-
-          <br></br>
-          <span className="name">
-            <h6>backend</h6>
-            <h6>frontend</h6>
-          </span>
-        </span>
-      </div>
+      <Backend backStatus={backStatus} iconsBack={iconsBack} setBackStatus={setBackStatus} frontStatus={frontStatus} setFrontStatus={setFrontStatus}/>
+      {/* <Frontend frontStatus={frontStatus} iconsFront={iconsFront} setFrontStatus={setFrontStatus}backStatus={backStatus} setBackStatus={setBackStatus}/> */}
     </div>
   );
 }

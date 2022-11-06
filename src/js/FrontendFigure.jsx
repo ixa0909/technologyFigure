@@ -3,7 +3,7 @@ import style from "./End.module.css";
 
 import Icon from "./Icon/Icon";
 
-const Frontend = (props) => {
+const FrontendFigure = (props) => {
   return (
     <span className={props.frontStatus ? style.visible : style.hidden}>
       {props.iconsFront.map((iconFront) => {
@@ -14,4 +14,4 @@ const Frontend = (props) => {
   );
 };
 
-export default Frontend;
+export default FrontendFigure;
