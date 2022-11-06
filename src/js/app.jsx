@@ -21,16 +21,6 @@ function App() {
     (async () => {
       setIcon([
         {
-          setStatus: setBackStatus,
-          status: backStatus,
-          text: "backend",
-        },
-        {
-          setStatus: setFrontStatus,
-          status: frontStatus,
-          text: "frontend",
-        },
-        {
           setStatus: setGoStatus,
           status: goStatus,
           text: "go",
@@ -70,7 +60,7 @@ function App() {
       <div className="framework">
         <span className="icon">
           <Backend backStatus={backStatus} goStatus={goStatus} />
-          <Frontend frontStatus={frontStatus} reactStatus={reactStatus} />
+          <Frontend frontStatus={frontStatus} icons={icons} />
 
           <br></br>
           <span className="name">
