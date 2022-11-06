@@ -8,7 +8,7 @@ import Frontend from "./Frontend";
 import Home from "./Home";
 import About from "./About";
 
-import { BrowserRouter as Router, Route ,Routes,Link} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 function App() {
   const [goStatusBack, setGoStatusBack] = useState(true);
@@ -100,33 +100,41 @@ function App() {
   ]);
 
   return (
-    // <div>
-    //   <Backend
-    //     backStatus={backStatus}
-    //     iconsBack={iconsBack}
-    //     iconsFront={iconsFront}
-    //     setBackStatus={setBackStatus}
-    //     frontStatus={frontStatus}
-    //     setFrontStatus={setFrontStatus}
-    //   />
-    //   <Frontend
-    //     frontStatus={frontStatus}
-    //     iconsBack={iconsBack}
-    //     iconsFront={iconsFront}
-    //     setFrontStatus={setFrontStatus}
-    //     backStatus={backStatus}
-    //     setBackStatus={setBackStatus}
-    //   />
-    // </div>
     <Router>
-      <h1>jglagja</h1>
-      <Link to="/">a</Link>
-      <Link to="/about">b</Link>
+      <h1>Header</h1>
+      <Link to="/">バックエンド</Link>
+      <br/>
+      <Link to="/front">フロントエンド</Link>
       <Routes>
-      <Route exact path="/" element={Home}/>
-      <Route path="/about" element={About}/>
-        
+        <Route
+          exact
+          path="/"
+          element={
+            <Backend
+              backStatus={backStatus}
+              iconsBack={iconsBack}
+              iconsFront={iconsFront}
+              setBackStatus={setBackStatus}
+              frontStatus={frontStatus}
+              setFrontStatus={setFrontStatus}
+            />
+          }
+        />
+        <Route
+          path="/front"
+          element={
+            <Frontend
+              frontStatus={frontStatus}
+              iconsBack={iconsBack}
+              iconsFront={iconsFront}
+              setFrontStatus={setFrontStatus}
+              backStatus={backStatus}
+              setBackStatus={setBackStatus}
+            />
+          }
+        />
       </Routes>
+      <h1>フッター</h1>
     </Router>
   );
 }
