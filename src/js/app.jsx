@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import "./app.css";
 
-import Backend from "./End/Backend";
+import Backend from "./End/BackendFigure";
 import Frontend from "./End/Frontend";
 import ButtonIcon from "./ButtonIcon";
+import BackendBtn from "./BackendBtn";
 
 function App() {
   const [goStatusBack, setGoStatusBack] = useState(true);
@@ -86,24 +87,7 @@ function App() {
 
   return (
     <div>
-      <div className="btn-back">
-        <ButtonIcon
-          setStatus={setBackStatus}
-          status={backStatus}
-          text={"backend"}
-        />
-        {iconsBack.map((iconBack) => {
-          return (
-            
-              <ButtonIcon
-                setStatus={iconBack.setStatusBack}
-                status={iconBack.statusBack}
-                text={iconBack.text}
-              />
-            
-          );
-        })}
-      </div>
+      <BackendBtn iconsBack={iconsBack} setBackStatus={setBackStatus} backStatus={backStatus}/>
       <div className="btn-front">
         <ButtonIcon
           setStatus={setFrontStatus}
