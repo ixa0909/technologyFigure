@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, createContext } from "react";
 import ReactDOM from "react-dom";
 import "./app.css";
 
@@ -12,6 +12,8 @@ import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+
+export const a = createContext();
 
 function App() {
   const [goStatusBack, setGoStatusBack] = useState(true);
@@ -28,6 +30,7 @@ function App() {
 
   const [frontStatus, setFrontStatus] = useState(true);
   const [backStatus, setBackStatus] = useState(true);
+  const value = { backStatus, setBackStatus};
 
   const [iconsBack, setIconBack] = useState([]);
   const [iconsFront, setIconFront] = useState([]);
@@ -105,20 +108,23 @@ function App() {
   return (
     <Router>
       <Header />
-      
+
       <Routes>
         <Route
           exact
           path="/index.html"
           element={
-            <Backend
-              backStatus={backStatus}
-              iconsBack={iconsBack}
-              iconsFront={iconsFront}
-              setBackStatus={setBackStatus}
-              frontStatus={frontStatus}
-              setFrontStatus={setFrontStatus}
-            />
+            <a.Provider value={value}>
+
+              <Backend
+                backStatus={backStatus}
+                iconsBack={iconsBack}
+                iconsFront={iconsFront}
+                setBackStatus={setBackStatus}
+                frontStatus={frontStatus}
+                setFrontStatus={setFrontStatus}
+              />
+            </a.Provider>
           }
         />
         <Route

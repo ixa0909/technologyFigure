@@ -1,13 +1,15 @@
-import React from "react";
+import React,{useContext} from "react";
+import {a} from "./App"
 import ButtonIcon from "./ButtonIcon";
 
 const BackendBtn = (props) => {
+  const {backStatus,setBackStatus} = useContext(a);
   return (
     <div className="btn">
       
       <ButtonIcon
-        setStatus={props.setBackStatus}
-        status={props.backStatus}
+        setStatus={setBackStatus}
+        status={backStatus}
         text={"backend"}
       />
       {props.iconsBack.map((iconBack) => {

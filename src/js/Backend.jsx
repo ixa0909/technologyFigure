@@ -10,8 +10,7 @@ const Backend = (props) => {
       
       <BackendBtn
         iconsBack={props.iconsBack}
-        setBackStatus={props.setBackStatus}
-        backStatus={props.backStatus}
+        
       />
 
     
