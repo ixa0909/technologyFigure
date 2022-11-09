@@ -8,6 +8,9 @@ import Frontend from "./Frontend";
 import Home from "./Home";
 import About from "./About";
 
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
+
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 function App() {
@@ -101,10 +104,8 @@ function App() {
 
   return (
     <Router>
-      <h1>Header</h1>
-      <Link to="/index.html">バックエンド</Link>
-      <br/>
-      <Link to="/index.html/front">フロントエンド</Link>
+      <Header />
+      
       <Routes>
         <Route
           exact
@@ -134,7 +135,7 @@ function App() {
           }
         />
       </Routes>
-      <h1>フッター</h1>
+      <Footer />
     </Router>
   );
 }

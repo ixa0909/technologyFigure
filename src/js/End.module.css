@@ -10,3 +10,8 @@
 .hidden {
   display: none;
 }
+
+.visibleIcon {
+  display: inline-block;
+}
+

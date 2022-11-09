@@ -14,8 +14,8 @@ const Backend = (props) => {
         backStatus={props.backStatus}
       />
 
-      <div className="fig">
-        <span className="icon">
+    
+        <span className="fig">
           <BackendFigure
             backStatus={props.backStatus}
             iconsBack={props.iconsBack}
@@ -25,7 +25,7 @@ const Backend = (props) => {
             iconsFront={props.iconsFront}
           />
         </span>
-      </div>
+      
     </div>
   );
 };

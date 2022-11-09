@@ -1,0 +1,25 @@
+#app {
+  margin: 0;
+}
+body {
+  width:100%;
+  margin: 0;
+}
+html {
+  /* background-color: rgb(67, 60, 60); */
+  
+}
+header {
+  background-color: rgb(199, 22, 22);
+}
+*{
+  margin: 0;
+}
+img {
+  width: 10%;
+  height: auto;
+}
+h6 {
+  margin:0;
+  padding:0;
+}

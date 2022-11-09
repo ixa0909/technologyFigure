@@ -1,17 +1,12 @@
-img {
-  width: 20%;
-  height: auto;
-}
+
 .btn {
   text-align: center;
   width: 100%;
   margin-bottom: 100px;
 }
-.fig {
-  text-align: center;
   
-}
-.icon {
+
+.fig {
   text-align: center;
   padding: 5px 5px 1px 5px;
   display: inline-block;
@@ -30,7 +25,4 @@ img {
   padding: 0 20.9% 0 20.9%;
   vertical-align: bottom;
 }
-h6 {
-  margin:0;
-  padding:0;
-}
+

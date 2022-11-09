@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import style from "./End.module.css";
 
-import Icon from "./Icon/Icon";
 
+import item from "./iconUrl"
 const BackendFigure = (props) => {
+  
   return (
     <span className={props.backStatus ? style.visible : style.hidden}>
       {props.iconsBack.map((iconBack) => {
-        return <Icon langStatus={iconBack.statusBack} lang={iconBack.text} />;
+        return <img src={item(iconBack.text)} className={iconBack.statusBack ? style.visibleIcon:style.hidden}></img>
+        
       })}
     </span>
   );
