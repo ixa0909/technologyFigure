@@ -14,6 +14,7 @@ import Footer from "./Footer/Footer";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 export const back = createContext();
+export const front = createContext();
 
 function App() {
   const [goStatusBack, setGoStatusBack] = useState(true);
@@ -29,9 +30,7 @@ function App() {
   const [vueStatusFront, setVueStatusFront] = useState(true);
 
   const [frontStatus, setFrontStatus] = useState(true);
-
   const [backStatus, setBackStatus] = useState(true);
-  const valueBack = { backStatus, setBackStatus };
 
   const [iconsBack, setIconBack] = useState([]);
   const [iconsFront, setIconFront] = useState([]);
@@ -109,32 +108,25 @@ function App() {
   return (
     <Router>
       <Header />
-      <back.Provider value={valueBack}>
-        <Routes>
-          <Route
-            exact
-            path="/index.html"
-            element={
-              <Backend
-                iconsBack={iconsBack}
-                iconsFront={iconsFront}
-                frontStatus={frontStatus}
-              />
-            }
-          />
-          <Route
-            path="index.html/front"
-            element={
-              <Frontend
-                frontStatus={frontStatus}
-                iconsBack={iconsBack}
-                iconsFront={iconsFront}
-                setFrontStatus={setFrontStatus}
-              />
-            }
-          />
-        </Routes>
-      </back.Provider>
+      <front.Provider value={{ frontStatus, setFrontStatus }}>
+        <back.Provider value={{ backStatus, setBackStatus }}>
+          <Routes>
+            <Route
+              exact
+              path="/index.html"
+              element={
+                <Backend iconsBack={iconsBack} iconsFront={iconsFront} />
+              }
+            />
+            <Route
+              path="index.html/front"
+              element={
+                <Frontend iconsBack={iconsBack} iconsFront={iconsFront} />
+              }
+            />
+          </Routes>
+        </back.Provider>
+      </front.Provider>
       <Footer />
     </Router>
   );

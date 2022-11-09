@@ -1,12 +1,14 @@
-import React from "react";
+import React,{useContext} from "react";
 import ButtonIcon from "./ButtonIcon";
 
+import {front} from "./App"
 const FrontendBtn = (props) => {
+  const {frontStatus,setFrontStatus} = useContext(front); 
   return (
     <div className="btn">
       <ButtonIcon
-        setStatus={props.setFrontStatus}
-        status={props.frontStatus}
+        setStatus={setFrontStatus}
+        status={frontStatus}
         text={"frontend"}
       />
       {props.iconsFront.map((iconFront) => {

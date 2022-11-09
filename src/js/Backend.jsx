@@ -15,11 +15,11 @@ const Backend = (props) => {
     
         <span className="fig">
           <BackendFigure
-            backStatus={props.backStatus}
+            
             iconsBack={props.iconsBack}
           />
           <FrontendFigure
-            frontStatus={props.frontStatus}
+            
             iconsFront={props.iconsFront}
           />
         </span>
