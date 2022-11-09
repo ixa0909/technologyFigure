@@ -10,7 +10,6 @@ const Backend = (props) => {
       
       <BackendBtn
         iconsBack={props.iconsBack}
-        
       />
 
     

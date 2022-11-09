@@ -1,10 +1,11 @@
-import React from "react";
-
+import React,{useContext} from "react";
+import {back} from "./App"
 import FrontendBtn from "./FrontendBtn";
 import BackendFigure from "./BackendFigure";
 import FrontendFigure from "./FrontendFigure";
 
 const Frontend = (props) => {
+  const {backStatus,setBackStatus} = useContext(back);
   return (
     <div>
       <FrontendBtn
@@ -16,7 +17,7 @@ const Frontend = (props) => {
       <div className="fig">
         <span className="icon">
           <BackendFigure
-            backStatus={props.backStatus}
+            backStatus={backStatus}
             iconsBack={props.iconsBack}
           />
           <FrontendFigure

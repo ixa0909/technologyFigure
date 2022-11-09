@@ -13,7 +13,7 @@ import Footer from "./Footer/Footer";
 
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
-export const a = createContext();
+export const back = createContext();
 
 function App() {
   const [goStatusBack, setGoStatusBack] = useState(true);
@@ -29,8 +29,9 @@ function App() {
   const [vueStatusFront, setVueStatusFront] = useState(true);
 
   const [frontStatus, setFrontStatus] = useState(true);
+
   const [backStatus, setBackStatus] = useState(true);
-  const value = { backStatus, setBackStatus};
+  const valueBack = { backStatus, setBackStatus };
 
   const [iconsBack, setIconBack] = useState([]);
   const [iconsFront, setIconFront] = useState([]);
@@ -108,39 +109,32 @@ function App() {
   return (
     <Router>
       <Header />
-
-      <Routes>
-        <Route
-          exact
-          path="/index.html"
-          element={
-            <a.Provider value={value}>
-
+      <back.Provider value={valueBack}>
+        <Routes>
+          <Route
+            exact
+            path="/index.html"
+            element={
               <Backend
-                backStatus={backStatus}
                 iconsBack={iconsBack}
                 iconsFront={iconsFront}
-                setBackStatus={setBackStatus}
                 frontStatus={frontStatus}
+              />
+            }
+          />
+          <Route
+            path="index.html/front"
+            element={
+              <Frontend
+                frontStatus={frontStatus}
+                iconsBack={iconsBack}
+                iconsFront={iconsFront}
                 setFrontStatus={setFrontStatus}
               />
-            </a.Provider>
-          }
-        />
-        <Route
-          path="index.html/front"
-          element={
-            <Frontend
-              frontStatus={frontStatus}
-              iconsBack={iconsBack}
-              iconsFront={iconsFront}
-              setFrontStatus={setFrontStatus}
-              backStatus={backStatus}
-              setBackStatus={setBackStatus}
-            />
-          }
-        />
-      </Routes>
+            }
+          />
+        </Routes>
+      </back.Provider>
       <Footer />
     </Router>
   );
