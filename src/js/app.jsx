@@ -6,7 +6,7 @@ import Backend from "./Backend";
 import Frontend from "./Frontend";
 
 import Home from "./Home";
-import About from "./About";
+import Result from "./Result";
 
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
@@ -113,13 +113,29 @@ function App() {
           <Routes>
             <Route
               exact
-              path="/index.html"
+              path="index.html"
               element={
                 <Backend iconsBack={iconsBack} iconsFront={iconsFront} />
               }
             />
+          
             <Route
-              path="index.html/front"
+              exact
+              path="home"
+              element={
+                <Home />
+              }
+            />
+          
+            <Route
+              exact
+              path="result"
+              element={
+                <Result />
+              }
+            />
+            <Route
+              path="front"
               element={
                 <Frontend iconsBack={iconsBack} iconsFront={iconsFront} />
               }

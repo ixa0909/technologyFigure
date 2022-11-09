@@ -1,9 +1,9 @@
 import React from 'react'
 
-function About () {
+function Result () {
   return (
     <h2>About</h2>
   )
 }
 
-export default About
+export default Result
