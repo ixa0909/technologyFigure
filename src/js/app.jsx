@@ -135,7 +135,7 @@ function App() {
               }
             />
             <Route
-              path="front"
+              path=""
               element={
                 <Frontend iconsBack={iconsBack} iconsFront={iconsFront} />
               }

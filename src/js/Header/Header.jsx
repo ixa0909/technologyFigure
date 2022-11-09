@@ -8,7 +8,7 @@ const Header = () => {
       {/* <h1>{{.a}}</h1> */}
       <Link to="/index.html">バックエンド</Link>
       <br/>
-      <Link to="/front">フロントエンド</Link>
+      <Link to="">フロントエンド</Link>
       <br/>
       <Link to="/home">home</Link>
       <br/>
