@@ -19,14 +19,14 @@ export const front = createContext();
 function App() {
   const [goStatusBack, setGoStatusBack] = useState(true);
   const [reactStatusBack, setReactStatusBack] = useState(true);
-  const [htmlStatusBack, setHtmlStatusBack] = useState(true);
+  const [htmlStatusBack, setHtmlStatusBack] = useState(false);
   const [cssStatusBack, setCssStatusBack] = useState(true);
   const [vueStatusBack, setVueStatusBack] = useState(true);
 
   const [goStatusFront, setGoStatusFront] = useState(true);
   const [reactStatusFront, setReactStatusFront] = useState(true);
   const [htmlStatusFront, setHtmlStatusFront] = useState(true);
-  const [cssStatusFront, setCssStatusFront] = useState(true);
+  const [cssStatusFront, setCssStatusFront] = useState(false);
   const [vueStatusFront, setVueStatusFront] = useState(true);
 
   const [frontStatus, setFrontStatus] = useState(true);
@@ -131,7 +131,7 @@ function App() {
               exact
               path="result"
               element={
-                <Result />
+                <Result iconsBack={iconsBack} iconsFront={iconsFront}/>
               }
             />
             <Route

@@ -1,8 +1,15 @@
 import React from 'react'
+import BackendFigure from './BackendFigure'
+import FrontendFigure from './FrontendFigure'
 
-function Result () {
+function Result (props) {
   return (
-    <h2>About</h2>
+    <div className="fig_around">
+        <span className="fig">
+          <BackendFigure iconsBack={props.iconsBack} />
+          <FrontendFigure iconsFront={props.iconsFront} />
+        </span>
+      </div>
   )
 }
 
