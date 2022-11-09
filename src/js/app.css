@@ -16,7 +16,9 @@
   /* margin: 0 10% 0 10%; */
   border-radius: 5px;
 }
-
+.fig_around {
+  text-align: center;
+}
 
 .name {
   /* 枠組みがないので調節する必要がある */

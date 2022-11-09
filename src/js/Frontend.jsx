@@ -12,7 +12,7 @@ const Frontend = (props) => {
         iconsFront={props.iconsFront}
         
       />
-
+  <div className="fig_around">
       <div className="fig">
         <span className="icon">
           <BackendFigure
@@ -24,6 +24,7 @@ const Frontend = (props) => {
             iconsFront={props.iconsFront}
           />
         </span>
+      </div>
       </div>
     </div>
   );
