@@ -22,6 +22,11 @@ function App() {
   const [htmlStatusBack, setHtmlStatusBack] = useState(false);
   const [cssStatusBack, setCssStatusBack] = useState(true);
   const [vueStatusBack, setVueStatusBack] = useState(true);
+  const [pythonStatusBack, setPythonStatusBack] = useState(true);
+  const [javaStatusBack, setJavaStatusBack] = useState(true);
+  const [slackStatusBack, setSlackStatusBack] = useState(true);
+  const [mysqlStatusBack, setMysqlStatusBack] = useState(true);
+  const [sqliteStatusBack, setSqliteStatusBack] = useState(true);
 
   const [goStatusFront, setGoStatusFront] = useState(true);
   const [reactStatusFront, setReactStatusFront] = useState(true);
@@ -63,6 +68,31 @@ function App() {
           statusBack: htmlStatusBack,
           text: "html5",
         },
+        {
+          setStatusBack: setMysqlStatusBack,
+          statusBack: mysqlStatusBack,
+          text: "mysql",
+        },
+        {
+          setStatusBack: setSqliteStatusBack,
+          statusBack: sqliteStatusBack,
+          text: "sqlite",
+        },
+        {
+          setStatusBack: setJavaStatusBack,
+          statusBack: javaStatusBack,
+          text: "java",
+        },
+        {
+          setStatusBack: setPythonStatusBack,
+          statusBack: pythonStatusBack,
+          text: "python",
+        },
+        {
+          setStatusBack: setSlackStatusBack,
+          statusBack: slackStatusBack,
+          text: "slack",
+        },
       ]);
       setIconFront([
         {
@@ -98,6 +128,11 @@ function App() {
     goStatusBack,
     vueStatusBack,
     htmlStatusBack,
+    pythonStatusBack,
+    javaStatusBack,
+    slackStatusBack,
+    sqliteStatusBack,
+    mysqlStatusBack,
     reactStatusFront,
     cssStatusFront,
     goStatusFront,
@@ -118,21 +153,13 @@ function App() {
                 <Backend iconsBack={iconsBack} iconsFront={iconsFront} />
               }
             />
-          
-            <Route
-              exact
-              path="home"
-              element={
-                <Home />
-              }
-            />
-          
+
+            <Route exact path="home" element={<Home />} />
+
             <Route
               exact
               path="result"
-              element={
-                <Result iconsBack={iconsBack} iconsFront={iconsFront}/>
-              }
+              element={<Result iconsBack={iconsBack} iconsFront={iconsFront} />}
             />
             <Route
               path=""
