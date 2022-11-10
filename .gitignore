@@ -26,3 +26,4 @@ go.mod
 go.sum
 tmp
 .air.toml
+demo.*
