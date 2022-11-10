@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./End.module.css";
+import style from "./Figure.module.css";
 const Name = (props) => {
   return <span className={style.name}>{props.name}</span>;
 };

@@ -2,11 +2,11 @@ import React, { useEffect, useState, createContext } from "react";
 import ReactDOM from "react-dom";
 import "./app.css";
 
-import Backend from "./Backend";
-import Frontend from "./Frontend";
+import Backend from "./Backend/Backend";
+import Frontend from "./Frontend/Frontend";
 
-import Home from "./Home";
-import Result from "./Result";
+import Home from "./Home/Home";
+import Result from "./Result/Result";
 
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";

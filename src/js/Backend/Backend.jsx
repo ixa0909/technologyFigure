@@ -2,7 +2,7 @@ import React from "react";
 import BackendBtn from "./BackendBtn";
 
 import BackendFigure from "./BackendFigure";
-import FrontendFigure from "./FrontendFigure";
+import FrontendFigure from "../Frontend/FrontendFigure";
 
 const Backend = (props) => {
   return (

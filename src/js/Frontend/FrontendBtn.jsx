@@ -1,9 +1,9 @@
-import React,{useContext} from "react";
-import ButtonIcon from "./ButtonIcon";
+import React, { useContext } from "react";
+import ButtonIcon from "../ButtonIcon";
 
-import {front} from "./App"
+import { front } from "../App";
 const FrontendBtn = (props) => {
-  const {frontStatus,setFrontStatus} = useContext(front); 
+  const { frontStatus, setFrontStatus } = useContext(front);
   return (
     <div className="btn">
       <ButtonIcon

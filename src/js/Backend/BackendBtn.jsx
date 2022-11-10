@@ -1,12 +1,11 @@
-import React,{useContext} from "react";
-import {back} from "./App"
-import ButtonIcon from "./ButtonIcon";
+import React, { useContext } from "react";
+import { back } from "../App";
+import ButtonIcon from "../ButtonIcon";
 
 const BackendBtn = (props) => {
-  const {backStatus,setBackStatus} = useContext(back);
+  const { backStatus, setBackStatus } = useContext(back);
   return (
     <div className="btn">
-      
       <ButtonIcon
         setStatus={setBackStatus}
         status={backStatus}
