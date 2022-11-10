@@ -1,12 +1,10 @@
 .visible {
-  display: inline-block;
+  /* display: inline-block; */
   border: 1px solid #fcf9f9;
   /* margin: 0 10% 0 10%; */
   border-radius: 5px;
-  padding:0px;
-  
-  
-  
+  padding: 0px;
+  float:left;
 }
 .hidden {
   display: none;
@@ -16,3 +14,11 @@
   display: inline-block;
 }
 
+.name {
+  display: inline-block;
+  text-align: center;
+  
+  vertical-align: top;
+  color: #fff;
+
+}
