@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"fmt"
 )
 
 func main() {
@@ -19,11 +20,15 @@ func main() {
 	})
 
 
-	// router.GET("/side", func(ctx *gin.Context) {
-	// 	ctx.HTML(200, "side.html", gin.H{
-	// 		"b": "aga",
-	// 	})
-	// })
+	router.GET("/side", func(ctx *gin.Context) {
+		ctx.HTML(200, "side.html", gin.H{
+			"b": "aga",
+		})
+	})
+	router.POST("/test", func(ctx *gin.Context) {
+		a:=ctx.PostForm("name")
+		fmt.Println(a)
+	})
 
 	
 

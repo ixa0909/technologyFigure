@@ -11,10 +11,17 @@ import Result from "./Result/Result";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 
+import axios from "axios";
+
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 export const back = createContext();
 export const front = createContext();
+
+const params=new URLSearchParams();
+params.append("name","kazuki");
+axios.post("http://localhost:8080/test",params)
+
 
 function App() {
   const [goStatusBack, setGoStatusBack] = useState(true);
