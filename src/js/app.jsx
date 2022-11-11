@@ -18,12 +18,27 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 export const back = createContext();
 export const front = createContext();
 
-const params=new URLSearchParams();
-params.append("name","kazuki");
-axios.post("http://localhost:8080/test",params)
-
+const params = new URLSearchParams();
+params.append("name", "kazuki");
+axios.post("http://localhost:8080/test", params);
 
 function App() {
+  const [a,aset]=useState();
+  useEffect(() => {
+    axios
+    .get("/user", {
+      params: {
+        name: "bsrasa",
+      },
+    })
+    .then(function (response) {
+      console.log(response.data);
+      aset(response.data["b"])
+      
+    });
+  },[a]);
+  console.log(a);
+
   const [goStatusBack, setGoStatusBack] = useState(true);
   const [reactStatusBack, setReactStatusBack] = useState(true);
   const [htmlStatusBack, setHtmlStatusBack] = useState(false);
@@ -171,7 +186,7 @@ function App() {
             <Route
               path=""
               element={
-                <Frontend iconsBack={iconsBack} iconsFront={iconsFront} />
+                <Frontend iconsBack={iconsBack} iconsFront={iconsFront} ab={a}/>
               }
             />
           </Routes>

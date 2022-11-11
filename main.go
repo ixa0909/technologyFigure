@@ -13,24 +13,25 @@ func main() {
 	router.Static("/src/js", "./src/js")
 
 
-	router.GET("/", func(ctx *gin.Context) {
-		ctx.HTML(200, "index.html", gin.H{
+	router.GET("/", func(c *gin.Context) {
+		c.HTML(200, "index.html", gin.H{
 			"a": "変数をバックエンドからフロントへ渡しています",
 		})
 	})
 
 
-	router.GET("/side", func(ctx *gin.Context) {
-		ctx.HTML(200, "side.html", gin.H{
-			"b": "aga",
-		})
-	})
-	router.POST("/test", func(ctx *gin.Context) {
-		a:=ctx.PostForm("name")
+	router.POST("/test", func(c *gin.Context) {
+		a:=c.PostForm("name")
 		fmt.Println(a)
 	})
 
-	
+	router.GET("/user", func(c *gin.Context) {
+    name := c.Query("name")
+    fmt.Println(name)
+		c.JSON(200, gin.H{
+			"b": "aga",
+		})
+  })
 
 	router.Run(":8080")
 }
