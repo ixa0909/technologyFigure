@@ -15,15 +15,9 @@
 # vendor/
 
 node_modules
-webpack.config.js
-*.json
-*.sh
 
 plan.docx
 ~$plan.docx
 main
-go.mod
-go.sum
 tmp
 .air.toml
-demo.*
